@@ -14,6 +14,6 @@ loop do
   hash_goods[title] = { 'price' => price, 'quantity' => quantity }
 end
 
-hash_goods.each { |_name, hash| sum_cart += hash['price'] * hash['quantity'] }
+hash_goods.each { |name, hash| sum_cart += hash['price'] * hash['quantity'] }
 puts hash_goods
 puts "Итого: #{sum_cart}"
