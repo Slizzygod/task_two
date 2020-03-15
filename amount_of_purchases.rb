@@ -11,9 +11,12 @@ loop do
   price = gets.chomp.to_f
   puts 'Введите количество товара'
   quantity = gets.chomp.to_f
-  hash_goods[title] = { 'price' => price, 'quantity' => quantity }
+  hash_goods[title] = { price: price, quantity: quantity }
 end
 
-hash_goods.each { |name, hash| sum_cart += hash['price'] * hash['quantity'] }
-puts hash_goods
+hash_goods.each do |name, hash|
+  sum_cart += hash[:price] * hash[:quantity]
+  puts "Итоговая сумма товара #{name} по цене #{hash[:price]} равна #{hash[:price] * hash[:quantity]}"
+end
 puts "Итого: #{sum_cart}"
+puts hash_goods
