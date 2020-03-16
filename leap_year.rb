@@ -10,6 +10,6 @@ year = gets.chomp.to_i
 days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 days[1] = 29 if year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)
 
-sum = (0..month - 2).to_a.sum { |i| days[i] }
+sum = days.take(month - 1).sum
 
 puts "Порядковый номер даты: #{sum + number}"
